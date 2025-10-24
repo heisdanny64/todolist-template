@@ -26,11 +26,13 @@ export function TaskInput({ onAddTask }: TaskInputProps) {
         onChange={(e) => setText(e.target.value)}
         placeholder="Add a new task..."
         className="glass border-0 focus-visible:ring-2 focus-visible:ring-primary text-lg"
+        aria-label="New task input"
       />
       <Button 
         type="submit" 
         size="icon"
         className="glass-hover shrink-0 rounded-xl"
+        aria-label="Add task"
       >
         <Plus className="h-5 w-5" />
       </Button>

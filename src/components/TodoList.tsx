@@ -93,7 +93,7 @@ export function TodoList() {
 
         {/* Tasks List */}
         {tasks.length > 0 && (
-          <div className="space-y-3 group">
+          <div className="space-y-3 group" role="list" aria-label="Tasks list">
             {tasks.map((task) => (
               <TaskItem
                 key={task.id}

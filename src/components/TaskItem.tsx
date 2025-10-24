@@ -35,6 +35,7 @@ export function TaskItem({ task, onToggle, onDelete, onEdit }: TaskItemProps) {
           checked={task.completed}
           onCheckedChange={() => onToggle(task.id)}
           className="h-5 w-5"
+          aria-label={task.completed ? "Mark as incomplete" : "Mark as complete"}
         />
         
         {isEditing ? (
@@ -49,12 +50,14 @@ export function TaskItem({ task, onToggle, onDelete, onEdit }: TaskItemProps) {
               }}
               className="glass border-0"
               autoFocus
+              aria-label="Edit task text"
             />
             <Button
               size="icon"
               variant="ghost"
               onClick={handleEdit}
               className="shrink-0"
+              aria-label="Save changes"
             >
               <Check className="h-4 w-4" />
             </Button>
@@ -63,6 +66,7 @@ export function TaskItem({ task, onToggle, onDelete, onEdit }: TaskItemProps) {
               variant="ghost"
               onClick={handleCancel}
               className="shrink-0"
+              aria-label="Cancel editing"
             >
               <X className="h-4 w-4" />
             </Button>
@@ -83,6 +87,7 @@ export function TaskItem({ task, onToggle, onDelete, onEdit }: TaskItemProps) {
               variant="ghost"
               onClick={() => setIsEditing(true)}
               className="shrink-0 opacity-0 group-hover:opacity-100 transition-opacity"
+              aria-label="Edit task"
             >
               <Edit2 className="h-4 w-4" />
             </Button>
@@ -91,6 +96,7 @@ export function TaskItem({ task, onToggle, onDelete, onEdit }: TaskItemProps) {
               variant="ghost"
               onClick={() => onDelete(task.id)}
               className="shrink-0 text-destructive hover:text-destructive"
+              aria-label="Delete task"
             >
               <Trash2 className="h-4 w-4" />
             </Button>
